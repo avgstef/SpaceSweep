@@ -1,59 +1,108 @@
 # SpaceSweep
 
-**A polished, local-first Windows storage utility.**
+**A cleaner view of your storage.**
 
-SpaceSweep helps you understand disk usage, locate large files, and review temporary files before cleanup.
+SpaceSweep is a lightweight Windows desktop utility designed to help you understand and manage disk space through a modern, black-and-orange interface.
 
-## Features
+Explore large files, review temporary files, and get a clearer picture of your available storage — all from one desktop application.
 
-- Premium black-and-orange interface with custom app icon, soft startup fade, orange accent glow, and smooth Segoe UI typography
-- Drive capacity, used space, and free-space overview
-- Recursive large-file scanner, sorted by size, with a live percentage progress indicator
-- User temporary-folder scanner with live percentage progress
-- Manual file selection and confirmation before permanent deletion
-- Safe handling of inaccessible files and symbolic links
-- Local-first: no account or cloud upload functionality
+## ✨ Features
 
-## Screens / sections
+- **Storage Dashboard** — View drive capacity, used space, and available space.
+- **Large File Scanner** — Find large files and sort results by size.
+- **Temporary File Review** — Scan temporary folders and review discovered files before deletion.
+- **Modern Interface** — Dark surfaces, vibrant orange accents, and a custom application icon.
+- **Scan Progress** — Track file-scanning progress with a percentage indicator.
+- **Lightweight Desktop App** — Built with Python and Tkinter.
+- **Standalone Executable** — Build a Windows `.exe` using PyInstaller.
 
-- **Overview** — drive capacity cards and quick actions
-- **Large files** — scan a selected folder and inspect the largest files
-- **Cleanup** — review temporary files and choose what to delete
-- **Duplicates** — roadmap screen for the next build
-- **Settings** — safety boundaries and build information
+## 🖥️ Interface
 
-## Run from source
+SpaceSweep features a premium black-and-orange visual identity, with a dark dashboard, orange highlights, and a custom icon designed specifically for the application.
 
-1. Install Python 3.10+ from https://www.python.org/downloads/windows/
-2. Enable **Add Python to PATH** during installation.
-3. Run `run.bat` or execute `py spacesweep.py`.
+## 📦 Installation
 
-## Build a standalone EXE
+### Option 1 — Download the executable
 
-Run `build.bat`. It installs PyInstaller and builds `dist\SpaceSweep.exe`.
+1. Open the repository's **Releases** page.
+2. Download the latest `SpaceSweep.exe` release, if available.
+3. Run the executable on Windows.
 
-The build requires internet access to install PyInstaller. The executable does not require Python to be installed separately.
+> Releases must be published by the repository owner. If no release is available, use the source installation below.
 
-## Safety
+### Option 2 — Run from source
 
-- The large-file scanner reads file metadata and does not modify scanned files.
-- Cleanup only scans the current user's temporary directory.
-- Deletion requires selecting files and confirming the action.
-- Deletion is permanent and does not use the Recycle Bin.
-- Files in use or without sufficient permissions may be skipped.
-- Always review paths before deleting files.
+**Requirements:** Windows and Python 3.10 or newer.
 
-## Known limitations
+1. Clone the repository:
 
-- Duplicate detection is a roadmap placeholder in this version.
-- Scans may take time on large folders. A cancel button is not implemented yet.
-- The app is not digitally signed; Windows may display a reputation warning for a self-built executable.
+   ```bash
+   git clone https://github.com/YOUR-USERNAME/SpaceSweep.git
+   ```
 
-## License
+2. Open the project folder:
 
-MIT. See `LICENSE`.
+   ```bash
+   cd SpaceSweep
+   ```
 
+3. Launch the application:
 
-## Visual identity
+   ```bash
+   py spacesweep.py
+   ```
 
-The app uses a custom black-and-orange icon (`spacesweep.ico` / `spacesweep.png`), a restrained orange accent glow, startup fade-in, and determinate scan progress. Progress is based on a file-counting pass followed by the metadata scan, so scans perform two directory traversals for an honest percentage.
+## 🛠️ Build the executable
+
+The project includes a Windows build script.
+
+1. Make sure Python is installed and available through the `py` command.
+2. Run `build.bat`.
+3. Wait for PyInstaller to finish.
+4. Find the generated executable in:
+
+   ```text
+   dist/SpaceSweep.exe
+   ```
+
+The build script uses the included SpaceSweep icon.
+
+## 🔒 Safe file management
+
+SpaceSweep is intended to help users inspect storage and review files before taking action.
+
+- Review file paths before deleting anything.
+- Avoid removing files you do not recognize.
+- Close applications that may be using temporary files before cleaning them.
+- Keep backups of important data.
+
+**Important:** Deleting files can be permanent. Always verify the selected files before confirming deletion.
+
+## 🧰 Built With
+
+- [Python](https://www.python.org/) — Application logic
+- [Tkinter](https://docs.python.org/3/library/tkinter.html) — Desktop interface
+- [PyInstaller](https://pyinstaller.org/) — Windows executable packaging
+
+## 🗺️ Roadmap
+
+Potential improvements for future releases:
+
+- Additional interface polish and animations
+- Further scanning performance improvements
+- More detailed storage insights
+- Expanded testing across Windows systems
+
+## 🤝 Contributing
+
+Contributions, bug reports, and suggestions are welcome.
+
+If you find an issue, open a GitHub Issue with a description of the problem and steps to reproduce it.
+
+## 📄 License
+
+See the [`LICENSE`](LICENSE) file for the project's license terms.
+
+---
+
+**SpaceSweep** — Understand your storage. Keep it under control.
